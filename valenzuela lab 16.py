@@ -36,14 +36,14 @@ print("\nStarting UDP scan\n")
 sleep(1)
 udp_scan()
 
-for line in tcp_scan():
-    print(line)
+#for line in tcp_scan():
+    #print(line)
 
 
 input_file = input('Enter the name of the file you want to write the scans to: ')
 f = open(input_file, "a")
-f.write(line)
-#f.write(line1)
+for line1 in tcp_scan():  
+    f.write(line1)
+for line2 in udp_scan():
+    f.write(line2)
 f.close()
-
-
